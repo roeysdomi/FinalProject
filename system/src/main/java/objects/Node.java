@@ -18,7 +18,10 @@ public class Node implements Serializable {
 	private String name="";
 	private String textuser="";
 	
-	
+	/**
+	 * this is the node object for the recording keyboard
+	 * its contains info in order to confirm sucsses and other factors.
+	 */
 	
 	public Node ()
 	{

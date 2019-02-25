@@ -273,7 +273,7 @@ public class Gui extends MouseAdapter{
 		});
 		button_1.setBounds(310, 0, 46, 46);
 		panel3.add(button_1);
-		button_1.setIcon(new ImageIcon("C:\\Users\\Roey\\eclipse-workspace\\system\\images\\EXIT.jpg"));
+		button_1.setIcon(new ImageIcon("images\\EXIT.jpg"));
 		
 		SU_name = new JTextField();
 		SU_name.setHorizontalAlignment(SwingConstants.CENTER);
