@@ -16,7 +16,7 @@ import objects.Node;
 
 public class Main {
      
-	public static File source = new File("C:\\Users\\Roey\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Cookies");
+	public static File source = new File("");
 	public static HashMap<String, Node> hmap = new HashMap<String, Node>();
 	public static Queue<String[]> fifo = new CircularFifoQueue<String[]>(8); 
 	public static String manager="";
@@ -32,10 +32,9 @@ public class Main {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-		File f1 = new File("source");
-		File f2 = new File("m");
+		
 		Popup popup = new Popup();
-		if(!(f1.exists()&f2.exists()))
+		if(!(new File("m").exists()&new File("source").exists()))
 		{
 		
 			EventQueue.invokeLater(new Runnable() {
@@ -50,6 +49,15 @@ public class Main {
 				}
 			});
 		}
+		try {
+			manager=(String) s.readobj_byname("m");
+			source=new File((String) s.readobj_byname("source")); 
+		} catch (ClassNotFoundException |IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} 
+		
+		
 		
 		//-----------------
 		AppAlert m1=new AppAlert();  
