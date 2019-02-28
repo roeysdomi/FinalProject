@@ -23,7 +23,7 @@ import org.opencv.videoio.VideoCapture;
 public class Camera extends Application {
    Mat matrix = null;
    /**
-    * bla
+    * blab
     */
 
    @Override
