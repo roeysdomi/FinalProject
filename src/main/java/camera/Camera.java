@@ -22,6 +22,9 @@ import org.opencv.videoio.VideoCapture;
 
 public class Camera extends Application {
    Mat matrix = null;
+   /**
+    * bla
+    */
 
    @Override
    public void start(Stage stage) throws FileNotFoundException, IOException {
