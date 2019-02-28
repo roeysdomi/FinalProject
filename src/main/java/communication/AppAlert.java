@@ -29,9 +29,14 @@ public class AppAlert implements Runnable
 	public  HashMap<String, Node> hmap=Main.hmap;
 	public boolean copy=false;
 	
-	
+	/**
+	 * class that run as a thread and listen to smartphone
+	 */
 	public void run()
 	{  
+		/**
+		 * listen to smartphone and act by command
+		 */
 		boolean keep=true;
 		Textnow txt=new Textnow();
 		while(keep)
@@ -124,6 +129,9 @@ public class AppAlert implements Runnable
 	}
 	public Node findNodeByUSER(String user)
 	{
+		/**
+		 * return node by username
+		 */
 		Node n=new Node();
 		for(Node b:hmap.values())
 		{
