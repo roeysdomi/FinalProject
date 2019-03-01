@@ -29,31 +29,18 @@ public class Start implements Runnable{
 	public   Queue<String[]> fifo = Main.fifo;
 	public static boolean run = true;
 	public static String lastname="";
-	public static void main(String[] args) throws IOException {
-		// might throw a UnsatisfiedLinkError if the native library fails to load or a RuntimeException if hooking fails
-		//Runtime.getRuntime().exec("Rundll32.exe powrprof.dll,SetSuspendState Sleep");
-		Node n=new Node();
-		n.setName("Roey");
-		n.setTextuser("roey.sdomi");
-		Start s=new Start();
-		s.hmap.put("111111", n);
-		
-		AppAlert m1=new AppAlert();  
-		Thread t1 =new Thread(m1);  
-		t1.start(); 
-		/*
-		KeyboardFunc ro=new KeyboardFunc();
-	    ro.reckeyboard();
-	    
-	    ro.startkeyboard();
-		*/
-	}
+	/**
+	 * the same as setup class but with startkeyboard
+	 */
 	public void run()
 	{
 		startkeyboard();
 	}
     public void startkeyboard()
 	{
+    	/**
+    	 * check the password typing was made by suspect .
+    	 */
 		run=true;
 			fifo=new CircularFifoQueue<String[]>(8);
 			GlobalKeyboardHook keyboardHook = new GlobalKeyboardHook(true); // use false here to switch to hook instead of raw input
