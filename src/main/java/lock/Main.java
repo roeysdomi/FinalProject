@@ -21,6 +21,10 @@ public class Main {
 	public static Queue<String[]> fifo = new CircularFifoQueue<String[]>(8); 
 	public static String manager="";
 	static boolean firsttime=false;
+	/**
+	 * the main class where the program lunch from
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		
 		Save s=new Save();
