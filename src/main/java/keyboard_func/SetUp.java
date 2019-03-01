@@ -28,14 +28,10 @@ public class SetUp implements Runnable {
 	//----------------------------
 	public   Queue<String[]> fifo = Main.fifo;
 	private static boolean run = true;
-	public static void main(String[] args) {
-		// might throw a UnsatisfiedLinkError if the native library fails to load or a RuntimeException if hooking fails
-		SetUp ro=new SetUp();
-	    ro.reckeyboard();
-	    
-	  
-		
-	}
+	
+	/**
+	 * class that handle the recording when u setup
+	 */
 
 	
 	public SetUp()
@@ -54,6 +50,9 @@ public class SetUp implements Runnable {
 	}
 	public void reckeyboard()
 	{
+		/**
+		 * recored up to 8 characters
+		 */
 		run=false;
 		run=true;
 		fifo=new CircularFifoQueue<String[]>(8);
@@ -119,6 +118,9 @@ public class SetUp implements Runnable {
 	}
 	public static String getstr(Queue<String[]> b)
 	{
+		/**
+		 * get the passw string
+		 */
 		String a="";
 		
 		for(String[] d:b)
@@ -129,6 +131,9 @@ public class SetUp implements Runnable {
 	}
 	public static double gettime()
 	{
+		/**
+		 * get the typing time
+		 */
 		int a=Calendar.getInstance().get(Calendar.SECOND);
 		int b=Calendar.getInstance().get(Calendar.MILLISECOND);
 		double c=Double.valueOf(a+"."+b);
@@ -137,6 +142,9 @@ public class SetUp implements Runnable {
 	}
     public static String[] keypress(GlobalKeyEvent event)
     {
+    	/**
+    	 * get the time and the letter u pressed
+    	 */
     	String a=String.valueOf(gettime());
 		String b=String.valueOf(event.getKeyChar());
 		String[]c= new String[2];
@@ -147,6 +155,9 @@ public class SetUp implements Runnable {
     }
     public  double timediff()
     {
+    	/**
+    	 * calc the time of the whole passw press
+    	 */
     	int counter=1;
     	double a=0;
     	double b=0;
