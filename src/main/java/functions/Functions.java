@@ -13,7 +13,10 @@ import lock.Main;
 
 public class Functions {
     
-	
+	/**
+	 * class that handle cookies and chrome mostly
+	 * but defind by the name functions
+	 */
 	public Functions()
 	{
 		
@@ -21,6 +24,9 @@ public class Functions {
 	//--------------cookies--------------
 	public static void deletecookies()
 	{
+		/**
+		 * delete cookies from source file
+		 */
 		if (Files.exists(Main.source.toPath())) { // if the target folder exists, delete it first;
 			
 			 try {
@@ -33,6 +39,9 @@ public class Functions {
 	}
 	public static void savecookies(String name)
 	{
+		/**
+		 * save cookies from source file
+		 */
 		try {
 			killchrome();
 			TimeUnit.SECONDS.sleep(2);
@@ -58,6 +67,9 @@ public class Functions {
 
 	public static void uplouadcookies(String name)
 	{
+		/**
+		 * restore cookies from dest file to source file by name
+		 */
 		
 		File dest = new File("cookies\\"+name);
 		try {
@@ -81,6 +93,11 @@ public class Functions {
 	}
 	///------------------------------------
  	public static void copyAndDelete(File source, File dest) throws IOException {
+ 		
+ 		/**
+		 * copy cookies from source to dest and delete source
+		 */
+ 		
 		if (Files.exists(dest.toPath())) { // if the target folder exists, delete it first;
 			
 			 Files.deleteIfExists(dest.toPath());
@@ -95,6 +112,9 @@ public class Functions {
 	    
 	}
  	public static void copyAnd_NOTDelete(File source, File dest) throws IOException {
+ 		/**
+		 * copy cookies from source to dest and  not delete source
+		 */
 		if (Files.exists(dest.toPath())) { // if the target folder exists, delete it first;
 			
 			 Files.deleteIfExists(dest.toPath());
@@ -111,18 +131,27 @@ public class Functions {
 	}
 	//-----chrome functions
 	public static void killchrome() throws IOException {
+		/**
+		 * close chrome
+		 */
 		Process p = Runtime
                 .getRuntime()
                 .exec("TASKKILL /IM chrome.exe");
 	    
 	}
 	public static void startchrome() throws IOException {
+		/**
+		 * lunch chrome
+		 */
 		 Process p3t = Runtime
 	                .getRuntime()
 	                .exec("cmd /c start chrome.exe");
 	}
 	public static void chromebyname(String name) throws IOException, InterruptedException
 	{
+		/**
+		 * close chrome ,upload cookies by name,lunch chrome
+		 */
 		killchrome();
 		TimeUnit.SECONDS.sleep(2);
 		uplouadcookies(name);
@@ -132,6 +161,9 @@ public class Functions {
 	///------------------
 	public static void deleteuser(String user,String passw)
 	{
+		/**
+		 * delete user from map
+		 */
 		
 		if(Main.hmap.get(passw).getTextuser().equals(user))
 		{
