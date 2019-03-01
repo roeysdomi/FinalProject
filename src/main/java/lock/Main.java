@@ -3,6 +3,7 @@ package lock;
 import java.awt.EventQueue;
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.Queue;
 
@@ -26,7 +27,16 @@ public class Main {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		
+		String libraryPath = "C:\\Users\\Roey\\eclipse-workspace\\opencv\\build\\java\\x64";
+		System.setProperty("java.library.path", libraryPath);
+		try {
+		Field sysPath = ClassLoader.class.getDeclaredField("sys_paths");
+		sysPath.setAccessible(true); 
+		sysPath.set(null, null);
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+		}
 		Save s=new Save();
 		try {
 			if(new File("myObjects").exists())
