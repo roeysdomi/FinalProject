@@ -11,21 +11,18 @@ import java.util.HashMap;
 
 public class Save {
 	
-	public static void main (String[]args) throws IOException, ClassNotFoundException
-	{
-		
-		
-		
-
-	     
-		
-	}
+	/**
+	 * class that handle the saving and reading of objects
+	 */
 	public Save() 
 	{
 		
 	}
 	public void saveobj(Object obj) throws IOException
 	{
+		/**
+		 * save object by name
+		 */
 		FileOutputStream f = new FileOutputStream(new File("myObjects"));
 		ObjectOutputStream o = new ObjectOutputStream(f);
 
@@ -38,6 +35,9 @@ public class Save {
 	}
 	public Object readobj () throws IOException, ClassNotFoundException
 	{
+		/**
+		 * read object by name
+		 */
 		FileInputStream fi = new FileInputStream(new File("myObjects"));
 		ObjectInputStream oi = new ObjectInputStream(fi);
 		return oi.readObject();
@@ -45,6 +45,9 @@ public class Save {
 	////-------------------------
 	public void saveobj_byname(Object obj,String name) throws IOException
 	{
+		/**
+		 * save object by name
+		 */
 		FileOutputStream f = new FileOutputStream(new File(name));
 		ObjectOutputStream o = new ObjectOutputStream(f);
 
@@ -57,6 +60,9 @@ public class Save {
 	}
 	public Object readobj_byname (String name) throws IOException, ClassNotFoundException
 	{
+		/**
+		 * read object by name
+		 */
 		FileInputStream fi = new FileInputStream(new File(name));
 		ObjectInputStream oi = new ObjectInputStream(fi);
 		return oi.readObject();
