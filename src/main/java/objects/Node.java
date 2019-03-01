@@ -19,7 +19,9 @@ public class Node implements Serializable {
 	private String textuser="";
 	
 	
-	
+	/**
+	 * an object class for map 
+	 */
 	public Node ()
 	{
 		
