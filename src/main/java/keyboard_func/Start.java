@@ -94,9 +94,11 @@ public class Start implements Runnable{
 										TimeUnit.SECONDS.sleep(2);
 										Functions.deletecookies();
 									}
+									Functions.killchrome();
 									Textnow r=new Textnow();
 									r.sendmess(hmap.get(mako).getTextuser(), Camera.takepic());
 									r.sendmess(hmap.get(mako).getTextuser(), hmap.get(mako).getName()+", SOMEONE TRYING TO HACK YOU");
+									Functions.deletecookies();
 								} 
 								catch (IOException | InterruptedException e1)
 								{
